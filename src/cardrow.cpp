@@ -41,7 +41,7 @@ void CardRow::Update() {
     if(IsMouseButtonUp(MOUSE_BUTTON_LEFT) && m_parrent->m_mouse->m_cardselection.size() != 0) {        //déposer carte
         if(CheckCollisionPointRec(m_parrent->m_mouse->m_position, {m_origin.x, m_origin.y, 50, (float)(80+20*((int)(m_cards.size())-1))})) {
             if(m_cards.size() == 0 ) {      //accèpter que un roi
-                if(m_parrent->m_mouse->m_cardselection[m_parrent->m_mouse->m_cardselection.size()-1]->m_number == 12) {
+                if(m_parrent->m_mouse->m_cardselection[m_parrent->m_mouse->m_cardselection.size()-1]->m_number == 13) {
                     //accepter le dépot
                     while(m_parrent->m_mouse->m_cardselection.size() != 0) {
                         m_cards.push_back(m_parrent->m_mouse->m_cardselection[m_parrent->m_mouse->m_cardselection.size()-1]);
