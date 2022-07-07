@@ -7,7 +7,7 @@
 
 int main(int argc, char const *argv[]) {
     InitWindow(960, 540, "solitaire :D");
-    SetTargetFPS(120);
+    SetTargetFPS(60);
 
     LoadCardTextures();
 

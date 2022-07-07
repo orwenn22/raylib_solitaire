@@ -27,7 +27,7 @@ Game::Game() {
         
         //mettre les cartes
         for(int j = 0; j < i+1; j++) {
-            Card* newcard = new Card((u8)((rand()%12)+1), (u8)(rand()%4));
+            Card* newcard = new Card((u8)((rand()%13)+1), (u8)(rand()%4));
             if(IsCardInVector(&existingcards, newcard)) {
                 j--;
                 delete newcard;
@@ -40,8 +40,8 @@ Game::Game() {
         }
     }
 
-    while(existingcards.size() < 48) {
-        Card* newcard = new Card((u8)((rand()%12)+1), (u8)(rand()%4));
+    while(existingcards.size() < 52) {
+        Card* newcard = new Card((u8)((rand()%13)+1), (u8)(rand()%4));
         if(!IsCardInVector(&existingcards, newcard)) {
             m_deck->Add(newcard);
             existingcards.push_back(newcard);
@@ -67,7 +67,7 @@ void Game::Update() {
     m_mouse->PostUpdate();
 
     m_framecount++;
-    if(m_framecount >= 120) {
+    if(m_framecount >= 60) {
         m_framecount = 0;
         m_timeinsec++;
     }

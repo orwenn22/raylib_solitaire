@@ -28,7 +28,7 @@ void DrawCard(float x, float y, Card card) {
         DrawRectangleRec({x, y, 50, 80}, WHITE);
         DrawRectangleLinesEx({x, y, 50, 80}, 1, BLACK);
         
-        const char* cardsnumbers[13] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"};
+        const char* cardsnumbers[14] = {" ", "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
         DrawText(cardsnumbers[card.m_number], (int)x+5, (int)y+5, 20, col);
 
         //const char* colorletters[4] = {"P", "<3", "C", "T"};
