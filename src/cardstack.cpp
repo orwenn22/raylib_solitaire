@@ -33,7 +33,10 @@ void CardStack::Update() {
                     //accèpter le dépot
                     m_cards.push_back(m_parrent->m_mouse->m_cardselection[0]);
                     m_parrent->m_mouse->m_cardselection.pop_back();
-                    m_parrent->m_movecount++;
+
+                    if(m_parrent->m_mouse->m_cardsource != &m_cards) {
+                        m_parrent->m_movecount++;
+                    }
                 }
             }
             else {
@@ -42,7 +45,10 @@ void CardStack::Update() {
                     //accèpter le dépot
                     m_cards.push_back(m_parrent->m_mouse->m_cardselection[0]);
                     m_parrent->m_mouse->m_cardselection.pop_back();
-                    m_parrent->m_movecount++;
+
+                    if(m_parrent->m_mouse->m_cardsource != &m_cards) {
+                        m_parrent->m_movecount++;
+                    }
                 }
             }
         }

@@ -46,7 +46,10 @@ void CardRow::Update() {
                     while(m_parrent->m_mouse->m_cardselection.size() != 0) {
                         m_cards.push_back(m_parrent->m_mouse->m_cardselection[m_parrent->m_mouse->m_cardselection.size()-1]);
                         m_parrent->m_mouse->m_cardselection.pop_back();
-                        m_parrent->m_movecount++;
+
+                        if(m_parrent->m_mouse->m_cardsource != &m_cards) {
+                            m_parrent->m_movecount++;
+                        }
                     }
                 }
             }
@@ -57,7 +60,10 @@ void CardRow::Update() {
                         while(m_parrent->m_mouse->m_cardselection.size() != 0) {
                             m_cards.push_back(m_parrent->m_mouse->m_cardselection[m_parrent->m_mouse->m_cardselection.size()-1]);
                             m_parrent->m_mouse->m_cardselection.pop_back();
-                            m_parrent->m_movecount++;
+
+                            if(m_parrent->m_mouse->m_cardsource != &m_cards) {
+                                m_parrent->m_movecount++;
+                            }
                         }
                     }
                 }

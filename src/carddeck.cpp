@@ -30,14 +30,15 @@ void CardDeck::Update() {
             if(m_hiddendeck.size() != 0) {      //AFFICHER LA CARTE SUIVANTE
                 m_displayeddeck.push_back(m_hiddendeck[m_hiddendeck.size()-1]);
                 m_hiddendeck.pop_back();
+                m_parrent->m_movecount++;
             } else {                //REMETTRE TOUTES LES CARTES DANS LE TAS FACE CACHÉ
                 int vecsize = m_displayeddeck.size();
                 for(int i = 0; i < vecsize; i++) {
                     m_hiddendeck.push_back(m_displayeddeck[m_displayeddeck.size()-1]);
                     m_displayeddeck.pop_back();
+                    m_parrent->m_movecount++;
                 }
             }
-            m_parrent->m_movecount++;
         }
 
         if(CheckCollisionPointRec(m_parrent->m_mouse->m_position, m_displayeddeckhitbox)) {     //PRENDRE LA CARTE PIOCHÉ
