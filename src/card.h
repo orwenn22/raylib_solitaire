@@ -20,13 +20,7 @@ struct Card {
 
     bool m_isred;
 
-    Card(u8 num, u8 col) {
-        m_number = num;
-        m_color = col;
-        m_ishidden = false;
-
-        m_isred = col == COL_COEUR || col == COL_CAREAU;
-    }
+    Card(u8 num, u8 col);
 };
 
 void LoadCardTextures();

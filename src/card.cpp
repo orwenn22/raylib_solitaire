@@ -5,6 +5,14 @@
 
 Texture2D colortextures[4];
 
+Card::Card(u8 num, u8 col) {
+    m_number = num;
+    m_color = col;
+    m_ishidden = false;
+
+    m_isred = col == COL_COEUR || col == COL_CAREAU;
+}
+
 void LoadCardTextures() {
     colortextures[0] = LoadTexture("res/pic.png");
     colortextures[1] = LoadTexture("res/heart.png");
